@@ -1,2 +1,2 @@
 # yung-ever-beauty
-##[YungEver Website](yungeverbeauty.com)
+[YungEver Website](http://www.yungeverbeauty.com)
