@@ -309,11 +309,12 @@
 				var $this = $(this);
 				if($this.attr("class") != "sub_article") {
 					// Close.
-					$('<div class="close">Close</div>')
+					$('<div class="close"></div>')
 						.appendTo($this)
 						.on('click', function() {
 							location.hash = '';
 						});
+					$('<i class="fas fa-times fa-lg"></i>').appendTo($this.find('.close')).css({'margin': '35%', 'color':'grey'});;
 				} else {
 					// Goback.
 					$('<div class="goback"></div>')
@@ -322,7 +323,7 @@
 							// location.hash = '';
 							window.history.back();
 						});
-					$('<i class="fas fa-long-arrow-alt-left fa-2x"></i>').appendTo($this.find('.goback')).css({'margin': '25% 0 0 25%', 'color':'green'});;
+					$('<i class="fas fa-long-arrow-alt-left fa-2x"></i>').appendTo($this.find('.goback')).css({'margin': '20% 0 0 25%', 'color':'green'});;
 				}
 				
 				// Prevent clicks from inside article from bubbling.
