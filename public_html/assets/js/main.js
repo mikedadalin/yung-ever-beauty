@@ -322,7 +322,7 @@
 							// location.hash = '';
 							window.history.back();
 						});
-					$('<i class="fas fa-long-arrow-alt-left fa-2x"></i>').appendTo($this.find('.goback')).css({'margin': '35% 0 0 25%', 'color':'green'});;
+					$('<i class="fas fa-long-arrow-alt-left fa-2x"></i>').appendTo($this.find('.goback')).css({'margin': '25% 0 0 25%', 'color':'green'});;
 				}
 				
 				// Prevent clicks from inside article from bubbling.

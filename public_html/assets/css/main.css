@@ -1601,9 +1601,11 @@ input, select, textarea {
 			    top: 0;
 			    right: 0;
 			    width: 4rem;
+			    height: 4rem;
 			    cursor: pointer;
 			    overflow: hidden;
 			    white-space: nowrap;
+			    border-radius: 100%;
 			}	
 
 			#main article .close {
@@ -1638,11 +1640,11 @@ input, select, textarea {
 					background-repeat: no-repeat;
 				}
 
-				#main article .close:hover:before {
-					background-color: rgba(255, 255, 255, 0.075);
+				#main article .close:hover:before, #main article .goback:hover {
+					background-color: lightgrey;
 				}
 
-				#main article .close:active:before {
+				#main article .close:active:before, #main article .goback:active {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
 
