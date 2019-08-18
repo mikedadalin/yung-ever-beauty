@@ -13,7 +13,8 @@
 		$footer = $('#footer'),
 		$main = $('#main'),
 		$main_articles = $main.children('article'),
-		language = sessionStorage.getItem('language') || "chinese";
+		language = sessionStorage.getItem('language') || "t-ch",
+		scrollTop_value;
 
 	// Breakpoints.
 		breakpoints({
@@ -27,8 +28,19 @@
 
 	// Play initial animations on page load. & language setting
 		$window.on('load', function() {
-			if(language == "chinese") $(".english").hide();
-			else if(language == "english") $(".chinese").hide();
+			if(language == "t-ch") {
+				$(".t-ch").addClass('selected');
+				$(".en, .s-ch").removeClass('selected');
+				$(".CH, .eng").hide();
+			} else if(language == "en") {
+				$(".en").addClass('selected');
+				$(".s-ch, .t-s-ch").removeClass('selected');
+				$(".CH, .TW").hide();
+			} else if(language == "s-ch") { 
+				$(".s-ch").addClass('selected');
+				$(".en, .t-ch").removeClass('selected');
+				$(".eng, .TW").hide();
+			}
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
@@ -67,18 +79,28 @@
 				$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
 
 			}
-	// Language
-		$('#language').on('click', function(event) {
+	// Language switch
+		$('.lang-item').on('click', function(event) {
 			event.preventDefault();
-			language = (language == "english") ? "chinese" : "english";
-			if(language == 'english') {
-				sessionStorage.setItem("language","english");
-				$(".chinese").hide();
-				$(".english").show();
-			} else {
-				sessionStorage.setItem("language","chinese");
-				$(".chinese").show();
-				$(".english").hide();
+			language = $(this).attr("name");
+			if(language == 'en') {
+				sessionStorage.setItem("language","en");
+				$(".CH, .TW").hide();
+				$(".s-ch, .t-ch").removeClass('selected');
+				$(".eng").show();
+				$(this).addClass('selected');
+			} else if(language == 't-ch') {
+				sessionStorage.setItem("language","t-ch");
+				$(".eng, .CH").hide();
+				$(".s-ch, .en").removeClass('selected');
+				$(".TW").show();
+				$(this).addClass('selected');
+			} else if(language == 's-ch') {
+				sessionStorage.setItem("language","s-ch");
+				$(".eng, .TW").hide();
+				$(".en, .t-ch").removeClass('selected');
+				$(".CH").show();
+				$(this).addClass('selected');
 			}
 		});
 
