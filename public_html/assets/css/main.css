@@ -1382,8 +1382,8 @@ input, select, textarea {
 
 			#header nav .language-nav .lang-item {
 				margin:0.3rem 0.3rem 0 0;
-				height:30px;
-				width:30px;
+				height:2rem;
+				width:2rem;
 				background-color: lightgrey;
 				border-radius: 100%;
 				color:white;

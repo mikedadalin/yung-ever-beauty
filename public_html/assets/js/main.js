@@ -344,7 +344,10 @@
 						.on('click', function() {
 							// location.hash = '';
 							window.history.back();
-							$("body, html").animate({scrollTop: scrollTop_value},1000,"swing");
+							$("body, html").animate({scrollTop: scrollTop_value},500,"linear");
+							// setTimeout(function(){
+							// 	$("body, html").css({scrollTop: scrollTop_value});	
+							// }, 500);
 						});
 					$('<i class="fas fa-long-arrow-alt-left fa-2x"></i>').appendTo($this.find('.goback')).css({'margin': '20% 0 0 25%', 'color':'green'});;
 				}
